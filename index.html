@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="stack">
+				<header>
+					<h1>Barkeep</h1>
+					<p>A quick reference page to help make your favorite cocktails</p>
+				</header>
+				<form id="search-form">
+					<div class="form-control">
+						<label for="search">Cocktail Name</label>
+						<input type="text" id="search" name="search" required />
+					</div>
+					<button class="btn-primary">Find</button>
+				</form>
+				<button id="random" class="btn-secondary">Show Random Drink</button>
+			</div>
+			<main>
+				<div id="drinks"></div>
+			</main>
+		</div>
+	</body>
+
+	<script src="./index.js"></script>
+</html>
