@@ -15,29 +15,31 @@ const drinkTemplate = (drink) => {
 		.map((k) => drink[k]);
 
 	return `
-		<article class="drink" id=${drink.idDrink}>
-			<div class="drink__content">
-				<h2>${drink.strDrink}</h2>
-				<div class="drink__details">
-					<h3>Recipe:</h3>
-					<ul>
-						${/* Map over the ingredients array and find the matching ingredient based on index. */ ''}
-						${Object.keys(ingredients)
+    <article class="drink" id=${drink.idDrink}>
+      <div class="drink__content">
+        <h2>${drink.strDrink}</h2>
+        <div class="drink__details">
+          <h3>Recipe:</h3>
+          <ul>
+            ${
+							/* Map over the ingredients array and find the matching ingredient based on index. */ ''
+						}
+            ${Object.keys(ingredients)
 							.map((_, i) => {
 								if (ingredients[i]) {
 									return `<li>${measurements[i] ? measurements[i] : ''} ${ingredients[i]}</li>`;
 								}
 							})
 							.join('')}
-					</ul>
-					<p>${drink.strInstructions}</p>
-					<p>Recommended Glass: ${drink.strGlass}</p>
-				</div>
-			</div>
-			<img src=${drink.strDrinkThumb} alt="${drink.strDrink}" />
-		</article>
-		<div class="popup-overlay"></div>
-	`;
+          </ul>
+          <p>${drink.strInstructions}</p>
+          <p>Recommended Glass: ${drink.strGlass}</p>
+        </div>
+      </div>
+      <img src=${drink.strDrinkThumb} alt="${drink.strDrink}" />
+    </article>
+    <div class="popup-overlay"></div>
+  `;
 };
 
 searchForm.addEventListener('submit', (e) => {
